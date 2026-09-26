@@ -1,44 +1,39 @@
 import streamlit as st
 from openai import OpenAI
 
-st.set_page_config(page_title="Ego - AIを育てるためのAI", page_icon="🧠", layout="centered")
+st.set_page_config(page_title="EGO - AIを育てるためのAI", page_icon="🧠", layout="centered")
 
 # --- スタイリッシュなカスタムCSS ---
 st.markdown("""
     <style>
     .main-title {
-        font-size: 2.5rem;
-        font-weight: 800;
-        letter-spacing: -0.05em;
+        font-size: 3rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
         margin-bottom: 0px;
-        background: linear-gradient(45deg, #ffffff, #a1a1aa);
+        background: linear-gradient(45deg, #ffffff, #71717a);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     .sub-tagline {
+        font-size: 1.1rem;
+        color: #d4d4d8;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+    .description {
         font-size: 0.95rem;
         color: #a1a1aa;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-    }
-    .badge {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #e4e4e7;
-        background: #27272a;
-        border-radius: 9999px;
-        margin-bottom: 1rem;
-        border: 1px solid #3f3f46;
+        margin-bottom: 2rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
 # --- ヘッダー・タイトル部分 ---
-st.markdown('<div class="badge">🧬 AIを育てるためのAI</div>', unsafe_allow_html=True)
-st.markdown('<h1 class="main-title">Ego</h1>', unsafe_allow_html=True)
-st.markdown('<p class="sub-tagline">対話のたびにあなたの「自我」を学習し、一生ものの相棒へと進化する。</p>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-title">EGO</h1>', unsafe_allow_html=True)
+st.markdown('<div class="sub-tagline">AIを育てるためのAI</div>', unsafe_allow_html=True)
+st.markdown('<p class="description">対話のたびにあなたの「自我」を学習し、一生ものの相棒へと進化する。</p>', unsafe_allow_html=True)
 
 # --- 1. セッション状態の初期化 ---
 if "messages" not in st.session_state:
