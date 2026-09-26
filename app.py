@@ -1,10 +1,44 @@
 import streamlit as st
 from openai import OpenAI
 
-st.set_page_config(page_title="Ego - 育つ相棒AI", page_icon="🧠", layout="centered")
+st.set_page_config(page_title="Ego - AIを育てるためのAI", page_icon="🧠", layout="centered")
 
-st.title("🧠 Ego（Ego）")
-st.caption("あなたのAPIキーで動き、対話のたびにあなた色の「自我」に育っていく相棒")
+# --- スタイリッシュなカスタムCSS ---
+st.markdown("""
+    <style>
+    .main-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        margin-bottom: 0px;
+        background: linear-gradient(45deg, #ffffff, #a1a1aa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .sub-tagline {
+        font-size: 0.95rem;
+        color: #a1a1aa;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+    .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #e4e4e7;
+        background: #27272a;
+        border-radius: 9999px;
+        margin-bottom: 1rem;
+        border: 1px solid #3f3f46;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- ヘッダー・タイトル部分 ---
+st.markdown('<div class="badge">🧬 AIを育てるためのAI</div>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-title">Ego</h1>', unsafe_allow_html=True)
+st.markdown('<p class="sub-tagline">対話のたびにあなたの「自我」を学習し、一生ものの相棒へと進化する。</p>', unsafe_allow_html=True)
 
 # --- 1. セッション状態の初期化 ---
 if "messages" not in st.session_state:
